@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'from' => ['address' => null, 'name' => null],
+    'from' => ['address' => 'no-reply@suosikeji.com', 'name' => '索思科技协会'],
 
     /*
     |--------------------------------------------------------------------------

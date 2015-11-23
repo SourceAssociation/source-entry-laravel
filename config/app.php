@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'url' => 'http://localhost',
+    'url' => 'http://bm.sourcer.space',
 
     /*
     |--------------------------------------------------------------------------
@@ -78,7 +78,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY', 'SomeRandomString'),
+    'key' => env('APP_KEY', 'e0SUnn45Hsv6qwpqdsdv630ImA9QLmwR'),
 
     'cipher' => 'AES-256-CBC',
 
