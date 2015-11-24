@@ -7,22 +7,20 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
 
-    <title>Laravel 5 起步</title>
+    <title>{{ config('params.copy')." — ".config('params.title') }}</title>
+
+    <link rel="stylesheet" type="text/css" href="/uikit/css/uikit.almost-flat.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+
+    <script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
 </head>
 <body>
-<div id="wrapper">
+    <div class="uk-cover-background uk-position-relative wrapper">
+        <div class="uk-position-cover uk-flex uk-flex-center uk-flex-middle">
 
-    @yield('content')
+            @yield('content')
 
-    <nav class="nav-container group" id="nav-footer">
-        <div class="nav-wrap">
-            <ul class="nav container group">
-                <li class="menu-item">
-                    <a href="/" rel="nofollow" target="_blank">Laravel 5 Blog</a>
-                </li>
-            </ul>
         </div>
-    </nav>
-</div>
+    </div>
 </body>
 </html>
