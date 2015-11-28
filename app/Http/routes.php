@@ -12,7 +12,7 @@
 */
 
 Route::group(['middleware' => 'date'], function() {
-    Route::get('/', 'HomeController@index');
+    // Route::get('/', 'HomeController@index');
 
     Route::post('ajax/login', 'AuthController@login');
     Route::post('ajax/register', 'AuthController@register');
@@ -26,4 +26,3 @@ Route::group(['middleware' => 'date'], function() {
     Route::get('auth/register', 'Auth\AuthController@getRegister');
     Route::post('auth/register', 'Auth\AuthController@postRegister');
 });
-
