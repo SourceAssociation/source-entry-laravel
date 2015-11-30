@@ -21,7 +21,7 @@ $(function(){
                 if (data.error) {
                     modal.hide();
                     UIkit.notify({
-                        message : "<i class='uk-icon-check'></i>" + data.msg,
+                        message : "<i class='uk-icon-info'></i> " + data.msg,
                         status  : 'warning',
                         timeout : 2000,
                         pos     : 'top-center'
@@ -58,7 +58,7 @@ $(function(){
                     modal.hide();
                     for (var i = 0; i < data.msg.length; i++) {
                         UIkit.notify({
-                            message : "<i class='uk-icon-check'></i>" +data.msg[i].value,
+                            message : "<i class='uk-icon-info'></i> " +data.msg[i].value,
                             status  : 'danger',
                             timeout : 2000,
                             pos     : 'top-center'

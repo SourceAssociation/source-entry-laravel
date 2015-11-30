@@ -3,12 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Auth;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\EntryUser;
 
 class CenterController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +22,8 @@ class CenterController extends Controller
      */
     public function index()
     {
-        return view('center.index');
+        $user = Auth::user();
+        return view('center.index', compact('user'));
     }
 
     /**
@@ -69,9 +76,20 @@ class CenterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        //更新用户信息
+        $key = $request->input('key');
+        $value = $request->input('value');
+
+        $res = $this->updateData($key, $value);
+        $results['error'] = $res;
+        if ($res) {
+            $results['msg'] = "更新成功！";
+        }else{
+            $results['msg'] = "更新失败！请刷新页面重试！";
+        }
+        return response()->json($results);
     }
 
     /**
@@ -80,8 +98,15 @@ class CenterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function avatar()
     {
-        //
+        // 更改头像
+        return view('center.avatar');
+    }
+
+    protected function updateData($key='id', $value="0")
+    {
+        $res = EntryUser::where('id', Auth::user()->id)->update([$key => $value]);
+        return $res;
     }
 }

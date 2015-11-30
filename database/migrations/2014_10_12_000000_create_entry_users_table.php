@@ -18,7 +18,7 @@ class CreateEntryUsersTable extends Migration
             $table->string('phone', 11);
             $table->string('password', 60);
             $table->tinyInteger('gender');
-            $table->text('profile');
+            $table->text('profile_img');
             $table->text('prov_city');
             $table->string('class_grade');
             $table->string('dormitory');

@@ -10,15 +10,16 @@
     <title>{{ $title }} - @yield('title', '主页')</title>
 
     <link rel="stylesheet" type="text/css" href="/uikit/css/uikit.almost-flat.min.css">
-    <link rel="stylesheet" type="text/css" href="/uikit/css/components/form-password.almost-flat.min.css">
     <link rel="stylesheet" type="text/css" href="/uikit/css/components/notify.almost-flat.min.css">
+    <link rel="stylesheet" type="text/css" href="/cropper/cropper.css">
     <link rel="stylesheet" type="text/css" href="/css/main.css">
 
     <script src="/js/jquery-2.1.4.min.js"></script>
     <script src="/uikit/js/uikit.min.js"></script>
-    <script src="/uikit/js/components/form-password.min.js"></script>
     <script src="/uikit/js/components/notify.min.js"></script>
-    <script src="/js/center.js"></script>
+    <script type="text/javascript" src="/cropper/cropper.min.js"></script>
+
+    <script src="/js/avatar.js"></script>
 
 </head>
 <body>
@@ -29,6 +30,8 @@
         @yield('content')
 
     </div>
+
+    @include('layouts.footer')
 
     {!! csrf_field() !!}
 </body>

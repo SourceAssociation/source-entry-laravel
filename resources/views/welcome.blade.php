@@ -3,7 +3,6 @@
 @section('title', "首页")
 
 @section('content')
-
     <div class="uk-container">
         <div class="uk-container-center uk-panel-box site-closed">
             <div class="uk-panel uk-panel-header">
@@ -29,5 +28,4 @@
             </div>
         </div>
     </div>
-
 @stop
