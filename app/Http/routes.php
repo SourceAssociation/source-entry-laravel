@@ -11,8 +11,8 @@
 |
 */
 
-Route::group(['middleware' => 'date'], function() {
-    // Route::get('/', 'HomeController@index');
+Route::group(['middleware' => 'date'], function () {
+    Route::get('/', 'HomeController@index');
 
     Route::post('ajax/login', 'AuthController@login');
     Route::post('ajax/register', 'AuthController@register');

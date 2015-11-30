@@ -18,7 +18,12 @@
                     <div class="uk-text-left">{!! $description !!}</div>
                     <hr class="uk-panel-divider">
                     <div class="uk-margin-small-top uk-text-center">
-                        <button class="uk-button login-btn" data-uk-modal="{target:'#login',center:true}">登录</button>
+                        @if (Auth::check())
+                            <a class="uk-button center-btn" href="auth/login">个人中心</a>
+                        @else
+                            <button class="uk-button login-btn" data-uk-modal="{target:'#login',center:true}">登录</button>
+                            <button class="uk-button register-btn" data-uk-modal="{target:'#register',center:true}">注册</button>
+                        @endif
                     </div>
                 @endif
             </div>

@@ -18,7 +18,10 @@ html,body{
 .site-closed .uk-panel-title{
     color: #f0f0f0;
 }
-.login-btn{
+
+.center-btn,
+.login-btn,
+.register-btn{
     background: transparent;
     border: 1px solid #f5f5f5;
     text-shadow: none;

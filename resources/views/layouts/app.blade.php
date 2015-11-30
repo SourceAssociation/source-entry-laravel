@@ -36,29 +36,78 @@
             <div class="uk-modal-header">
                 {{ $title }}
             </div>
-            <form class="uk-form uk-text-center">
-                {!! csrf_field() !!}
-                <div class="uk-form-row">
-                    <label>
-                        邮箱:
-                        <input type="text" id="email" placeholder="请输入邮箱">
-                    </label>
-                </div>
-                <div class="uk-form-row">
-                    <label class="">
-                        密码:
-                        <div class="uk-form-password">
-                            <input type="password" id="password" placeholder="请输入密码">
-                            <a href="javascript:void(0);" class="uk-form-password-toggle" data-uk-form-password="{lblShow:'<i class=uk-icon-eye-slash></i>', lblHide:'<i class=uk-icon-eye></i>'}"><i class="uk-icon-eye-slash"></i></a>
-                        </div>
-                    </label>
-                </div>
-                <div class="uk-form-row">
-                    <label><input type="checkbox" id="remember" value="1"> 记住密码？</label>
-                </div>
-            </form>
+            <div class="uk-width-small-1-1 uk-width-medium-1-2 uk-container-center">
+                <form class="uk-form">
+                    {!! csrf_field() !!}
+                    <div class="uk-form-row">
+                        <label>
+                            邮箱:
+                            <input type="email" id="email" placeholder="请输入邮箱">
+                        </label>
+                    </div>
+                    <div class="uk-form-row">
+                        <label class="">
+                            密码:
+                            <div class="uk-form-password">
+                                <input type="password" id="password" placeholder="请输入密码">
+                                <a href="javascript:void(0);" class="uk-form-password-toggle" data-uk-form-password="{lblShow:'<i class=uk-icon-eye-slash></i>', lblHide:'<i class=uk-icon-eye></i>'}"><i class="uk-icon-eye-slash"></i></a>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="uk-form-row">
+                        <label><input type="checkbox" id="remember" value="1"> 记住密码？</label>
+                    </div>
+                </form>
+            </div>
             <div class="uk-modal-footer uk-text-center">
                 <button type="button" class="uk-button submit-login-btn">登录</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="register" class="uk-modal">
+        <div class="uk-modal-dialog">
+            <button type="button" class="uk-modal-close uk-close"></button>
+            <div class="uk-modal-header">
+                {{ $title }}
+            </div>
+            <div class="uk-width-small-1-1 uk-width-medium-1-2 uk-container-center">
+                <form class="uk-form">
+                    {!! csrf_field() !!}
+                    <div class="uk-form-row">
+                        <label>
+                            名字:
+                            <input type="text" id="name" placeholder="请输入名字">
+                        </label>
+                    </div>
+                    <div class="uk-form-row">
+                        <label>
+                            邮箱:
+                            <input type="email" id="email" placeholder="请输入邮箱">
+                        </label>
+                    </div>
+                    <div class="uk-form-row">
+                        <label class="">
+                            密码:
+                            <div class="uk-form-password">
+                                <input type="password" id="password" placeholder="请输入密码">
+                                <a href="javascript:void(0);" class="uk-form-password-toggle" data-uk-form-password="{lblShow:'<i class=uk-icon-eye-slash></i>', lblHide:'<i class=uk-icon-eye></i>'}"><i class="uk-icon-eye-slash"></i></a>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="uk-form-row">
+                        <label class="">
+                            确认:
+                            <div class="uk-form-password">
+                                <input type="password" id="password_confirmation" placeholder="确认密码">
+                                <a href="javascript:void(0);" class="uk-form-password-toggle" data-uk-form-password="{lblShow:'<i class=uk-icon-eye-slash></i>', lblHide:'<i class=uk-icon-eye></i>'}"><i class="uk-icon-eye-slash"></i></a>
+                            </div>
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <div class="uk-modal-footer uk-text-center">
+                <button type="button" class="uk-button submit-register-btn">注册</button>
             </div>
         </div>
     </div>
