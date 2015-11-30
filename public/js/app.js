@@ -27,7 +27,7 @@ $(function(){
                         pos     : 'top-center'
                     });
                 }else{
-                    window.location.href = "/";
+                    window.location.href = "/center";
                 }
             });
         }

@@ -30,5 +30,6 @@ class Kernel extends HttpKernel
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'date' => \App\Http\Middleware\DateMiddleware::class,
+        'ajax' => \App\Http\Middleware\AjaxMiddleware::class,
     ];
 }

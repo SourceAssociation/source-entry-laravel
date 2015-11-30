@@ -11,11 +11,12 @@
 |
 */
 
+// 只有站点开启了才能访问
 Route::group(['middleware' => 'date'], function () {
     Route::get('/', 'HomeController@index');
 
-    Route::post('ajax/login', 'AuthController@login');
-    Route::post('ajax/register', 'AuthController@register');
+    // 个人中心
+    Route::get('center', 'CenterController@index');
 
     // Authentication routes...
     Route::get('auth/login', 'Auth\AuthController@getLogin');
@@ -25,4 +26,11 @@ Route::group(['middleware' => 'date'], function () {
     // Registration routes...
     Route::get('auth/register', 'Auth\AuthController@getRegister');
     Route::post('auth/register', 'Auth\AuthController@postRegister');
+});
+
+// Ajax请求（提示保证站点开启）
+Route::group(['middleware' => 'ajax'], function () {
+    // 登录注册
+    Route::post('ajax/login', 'AuthController@login');
+    Route::post('ajax/register', 'AuthController@register');
 });
