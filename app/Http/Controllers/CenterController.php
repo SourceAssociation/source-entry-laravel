@@ -7,6 +7,7 @@ use Auth;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\EntryUser;
+use App\Http\Middleware\CropAvatar;
 
 class CenterController extends Controller
 {
@@ -64,9 +65,33 @@ class CenterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function postAvatar(Request $request)
     {
-        //
+        //上传头像
+        $results['msg'] = $request->input('avatar_data');
+
+        $crop = new CropAvatar(
+            isset($_POST['avatar_src']) ? $_POST['avatar_src'] : null,
+            isset($_POST['avatar_data']) ? $_POST['avatar_data'] : null,
+            isset($_FILES['avatar_file']) ? $_FILES['avatar_file'] : null
+        );
+
+        $res = $this->updateData('profile_img', $crop->getResult());
+        if ($res) {
+            $state = 200;
+            $message = $crop->getMsg();
+            $url = $crop->getResult();
+        }else{
+            $state = 1005;
+            $message = "上传头像失败！";
+            $url = '';
+        }
+        $results = array(
+            'state'  => $state,
+            'message' => $message,
+            'result' => $url
+        );
+        return response()->json($results);
     }
 
     /**
@@ -101,7 +126,8 @@ class CenterController extends Controller
     public function avatar()
     {
         // 更改头像
-        return view('center.avatar');
+        $user = Auth::user();
+        return view('center.avatar', compact('user'));
     }
 
     protected function updateData($key='id', $value="0")

@@ -30,6 +30,8 @@
 
     </div>
 
+    @include('layouts.footer')
+
     {!! csrf_field() !!}
 </body>
 </html>

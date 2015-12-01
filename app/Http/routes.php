@@ -19,6 +19,7 @@ Route::group(['middleware' => 'date'], function () {
     Route::group(['middleware' => 'auth'], function () {
         Route::get('center', 'CenterController@index');
         Route::get('center/avatar', 'CenterController@avatar');
+        Route::post('center/avatar', 'CenterController@postAvatar');
     });
 
     // Authentication routes...
