@@ -15,6 +15,7 @@
     <link rel="stylesheet" type="text/css" href="/css/main.css">
 
     <script src="/js/jquery-2.1.4.min.js"></script>
+    <script src="/drawsvg/jquery.drawsvg.min.js"></script>
     <script src="/uikit/js/uikit.min.js"></script>
     <script src="/uikit/js/components/form-password.min.js"></script>
     <script src="/uikit/js/components/notify.min.js"></script>
