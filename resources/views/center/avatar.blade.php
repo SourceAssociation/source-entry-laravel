@@ -12,6 +12,12 @@
 @stop
 
 @section('content')
+    <!-- 提示 -->
+        <div class="uk-grid">
+            <div class="uk-width-1-1 uk-text-center">
+                <p class="padding-top-sm text-blue-depth-4">（默认图片为样张，请点击上传按钮上传自己的照片~）</p>
+            </div>
+        </div>
     <div id="crop-avatar">
         <form class="avatar-form" action="avatar" enctype="multipart/form-data" method="post">
             {{ csrf_field() }}
@@ -36,14 +42,14 @@
                         </div>
                     </div>
                     <div class="uk-grid avatar-btns">
-                        <div class="uk-width-3-4">
+                        <div class="uk-width-1-1 uk-width-medium-3-4">
                             <div class="uk-margin-top-remove">
                                 <div class="uk-button-group">
-                                    <button type="button" class="uk-button uk-button-primary uk-icon-refresh" data-method="reset"></button>
                                     <div class="uk-form-file">
                                         <button type="button" class="uk-button uk-button-primary uk-icon-upload"></button>
                                         <input type="file" class="avatar-input" id="avatarInput" name="avatar_file" accept="image/*">
                                     </div>
+                                    <button type="button" class="uk-button uk-button-primary uk-icon-refresh" data-method="reset"></button>
                                 </div>
                                 <div class="uk-button-group">
                                     <button type="button" class="uk-button uk-button-primary uk-icon-arrows" data-method="setDragMode" data-option="move"></button>
@@ -87,7 +93,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="uk-width-1-4">
+                        <div class="uk-width-1-1 uk-width-medium-1-4">
                             <button type="submit" class="uk-button uk-button-primary uk-block avatar-save">保存</button>
                             <a href="{{ config('app.url').'/center' }}" class="uk-button uk-button-danger uk-block avatar-save">返回</a>
                         </div>
@@ -95,8 +101,6 @@
                 </div>
             </div>
         </form>
-        <div class="uk-width-small-1-1 uk-width-medium-1-4"></div>
-
         <!-- Loading state -->
         <div class="loading" aria-label="Loading" role="img" tabindex="-1"></div>
     </div>

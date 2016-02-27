@@ -22,6 +22,10 @@
 
 @section('content')
 
-    {{ $user }}
+    <div class="uk-grid">
+        <div class="uk-width-1-1">
+            <p>{{ $user }}</p>
+        </div>
+    </div>
 
 @stop
